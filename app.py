@@ -265,3 +265,14 @@ def decline():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Blood Bank Management System is running!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
