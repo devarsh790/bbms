@@ -83,39 +83,15 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # Get Form Fields
-        e_id = request.form["e_id"]
-        password_candidate = request.form["password"]
+        emp_id = request.form['emp_id']
+        password = request.form['password']
 
-        # Create cursor
-        cur = mysql.connection.cursor()
+        print(emp_id, password)  # debug
 
-        # Get user by username
-        result = cur.execute("SELECT * FROM RECEPTION WHERE E_ID = %s", [e_id])
-
-        if result > 0:
-            # Get stored hash
-            data = cur.fetchone()
-            password = data['PASSWORD']
-
-            # Compare Passwords
-            if sha256_crypt.verify(password_candidate, password):
-                # Passed
-                session['logged_in'] = True
-                session['e_id'] = e_id
-
-                flash('You are now logged in', 'success')
-                return redirect(url_for('dashboard'))
-            else:
-                error = 'Invalid login'
-                return render_template('login.html', error=error)
-            # Close connection
-            cur.close()
-        else:
-            error = 'Employee ID not found'
-            return render_template('login.html', error=error)
+        return redirect(url_for('home'))
 
     return render_template('login.html')
+
 
 # Check if user logged in
 def is_logged_in(f):
