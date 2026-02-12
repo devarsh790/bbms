@@ -11,11 +11,12 @@ app.secret_key='some secret key'
 
 
 #Config MySQL
-app.config['MYSQL_HOST']='localhost'
-app.config['MYSQL_USER']='root'
-app.config['MYSQL_PASSWORD']='root'
-app.config['MYSQL_DB']='bbms'
-app.config['MYSQL_PORT'] = 3307
+app.config['MYSQL_HOST'] = 'switchback.proxy.rlwy.net'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'YOUR_REAL_PASSWORD'
+app.config['MYSQL_DB'] = 'railway'
+app.config['MYSQL_PORT'] = 55632
+
 
 #init MySQL
 mysql =  MySQL(app)
