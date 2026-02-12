@@ -11,11 +11,14 @@ app.secret_key='some secret key'
 
 
 #Config MySQL
-app.config['MYSQL_HOST'] = 'switchback.proxy.rlwy.net'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'aWQZPDhwoGMGowgBFNJWRxXFTKuepzuX'
-app.config['MYSQL_DB'] = 'railway'
-app.config['MYSQL_PORT'] = 55632
+import os
+
+app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST', 'switchback.proxy.rlwy.net')
+app.config['MYSQL_USER'] = os.getenv('MYSQL_USER', 'root')
+app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD', 'YOUR_REAL_PASSWORD')
+app.config['MYSQL_DB'] = os.getenv('MYSQL_DB', 'railway')
+app.config['MYSQL_PORT'] = int(os.getenv('MYSQL_PORT', 55632))
+
 
 #init MySQL
 mysql =  MySQL(app)
