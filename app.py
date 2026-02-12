@@ -93,14 +93,12 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        emp_id = request.form['emp_id']
-        password = request.form['password']
-
-        print(emp_id, password)  # debug
-
-        return redirect(url_for('donate'))
+        session['logged_in'] = True
+        flash('You are now logged in', 'success')
+        return redirect(url_for('dashboard'))
 
     return render_template('login.html')
+
 
 
 # Check if user logged in
