@@ -61,25 +61,33 @@ class RegisterForm(Form):
 @app.route('/register', methods=['GET','POST'])
 def register():
     form = RegisterForm(request.form)
-    if request.method  == 'POST' and form.validate():
+
+    if request.method == 'POST' and form.validate():
+
         name = form.name.data
         email = form.email.data
-        password = sha256_crypt.encrypt(str(form.password.data))
-        e_id = name+str(random.randint(1111,9999))
-        #Create cursor
-        cur = mysql.connection.cursor()
-       cur.execute("INSERT INTO RECEPTION(NAME,EMAIL,PASSWORD) VALUES(%s, %s, %s)", (name, email, password))
 
-        #Commit to DB
+        # FIX THIS LINE
+        password = sha256_crypt.hash(str(form.password.data))
+
+        # Create cursor
+        cur = mysql.connection.cursor()
+
+        # Insert user
+        cur.execute(
+            "INSERT INTO RECEPTION(NAME,EMAIL,PASSWORD) VALUES(%s, %s, %s)",
+            (name, email, password)
+        )
+
         mysql.connection.commit()
-        #close connection
         cur.close()
-        flashing_message = "Success! You can log in with Employee ID " + str(e_id)
-        flash( flashing_message,"success")
+
+        flash("Success! You can login now", "success")
 
         return redirect(url_for('login'))
 
-    return render_template('register.html',form = form)
+    return render_template('register.html', form=form)
+
 
 #login page
 @app.route('/login', methods=['GET', 'POST'])
