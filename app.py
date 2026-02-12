@@ -97,10 +97,11 @@ def register():
 def login():
     if request.method == 'POST':
         session['logged_in'] = True
-        flash('You are now logged in', 'success')
+        flash('Login successful', 'success')
         return redirect(url_for('dashboard'))
 
     return render_template('login.html')
+
 
 
 
