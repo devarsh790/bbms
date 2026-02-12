@@ -68,7 +68,8 @@ def register():
         e_id = name+str(random.randint(1111,9999))
         #Create cursor
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO RECEPTION(E_ID,NAME,EMAIL,PASSWORD) VALUES(%s, %s, %s, %s)",(e_id, name, email, password))
+       cur.execute("INSERT INTO RECEPTION(NAME,EMAIL,PASSWORD) VALUES(%s, %s, %s)", (name, email, password))
+
         #Commit to DB
         mysql.connection.commit()
         #close connection
