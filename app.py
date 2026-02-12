@@ -90,7 +90,7 @@ def login():
 
         print(emp_id, password)  # debug
 
-        return redirect(url_for('home'))
+        return redirect(url_for('donate'))
 
     return render_template('login.html')
 
