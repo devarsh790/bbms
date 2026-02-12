@@ -126,16 +126,20 @@ def logout():
 @is_logged_in
 def dashboard():
     cur = mysql.connection.cursor()
-    result = cur.callproc('BLOOD_DATA')
+
+    # FIX: Use SELECT instead of stored procedure
+    result = cur.execute("SELECT B_GROUP, TOTAL_PACKETS FROM BLOODBANK")
+
     details = cur.fetchall()
 
-    if result>0:
-        return render_template('dashboard.html',details=details)
+    if result > 0:
+        return render_template('dashboard.html', details=details)
     else:
-        msg = ' Blood Bank is Empty '
-        return render_template('dashboard.html',msg=msg)
-    #close connection
+        msg = 'Blood Bank is Empty'
+        return render_template('dashboard.html', msg=msg)
+
     cur.close()
+
 
 @app.route('/donate', methods=['GET', 'POST'])
 @is_logged_in
