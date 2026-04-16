@@ -1,0 +1,128 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="row mb-4">
+  <div class="col-md-12">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white">
+        <h5 class="mb-0 text-success"><i class="fas fa-calendar-check mr-2"></i> Scheduled Appointments</h5>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Location</th>
+                <th scope="col" class="text-center">Status</th>
+                {% if role == 'admin' %}
+                <th scope="col" class="text-center">Actions</th>
+                {% endif %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for apt in appointments %}
+              <tr>
+                <td>{{apt.NAME}}</td>
+                <td>{{apt.ADATE}}</td>
+                <td>{{apt.ATIME}}</td>
+                <td>{{apt.LOCATION}}</td>
+                <td class="text-center">
+                  {% if apt.STATUS == 'Accepted' %}
+                  <span class="badge badge-success p-2">{{apt.STATUS}}</span>
+                  {% elif apt.STATUS == 'Declined' %}
+                  <span class="badge badge-danger p-2">{{apt.STATUS}}</span>
+                  {% else %}
+                  <span class="badge badge-warning p-2">{{apt.STATUS}}</span>
+                  {% endif %}
+                </td>
+                {% if role == 'admin' %}
+                <td class="text-center">
+                  {% if apt.STATUS == 'Pending' %}
+                  <a href="{{ url_for('accept_appointment', id=apt.ID) }}" class="btn btn-sm btn-success mx-1"><i class="fas fa-check"></i></a>
+                  <a href="{{ url_for('decline_appointment', id=apt.ID) }}" class="btn btn-sm btn-danger mx-1"><i class="fas fa-times"></i></a>
+                  {% else %}
+                  <span class="text-muted"><i class="fas fa-minus"></i></span>
+                  {% endif %}
+                </td>
+                {% endif %}
+              </tr>
+              {% else %}
+              <tr>
+                <td colspan="7" class="text-center text-muted">No appointments found.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-12">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0 text-danger"><i class="fas fa-hand-holding-water mr-2"></i> Blood Requests</h5>
+        {% if role == 'user' %}
+        <a href="/contact" class="btn btn-sm btn-outline-danger">New Request</a>
+        {% endif %}
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Request ID</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Blood Group</th>
+                <th scope="col">Units</th>
+                <th scope="col" class="text-center">Status</th>
+                {% if role == 'admin' %}
+                <th scope="col" class="text-center">Actions</th>
+                {% endif %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for req in requests %}
+              <tr>
+                <td>#{{req.CONTACT_ID}}</td>
+                <td>{{req.F_NAME}}</td>
+                <td class="text-danger font-weight-bold">{{req.B_GROUP}}</td>
+                <td>{{req.C_PACKETS}}</td>
+                <td class="text-center">
+                  {% if req.STATUS == 'Accepted' %}
+                  <span class="badge badge-success p-2">{{req.STATUS}}</span>
+                  {% elif req.STATUS == 'Declined' %}
+                  <span class="badge badge-danger p-2">{{req.STATUS}}</span>
+                  {% else %}
+                  <span class="badge badge-warning p-2">{{req.STATUS}}</span>
+                  {% endif %}
+                </td>
+                {% if role == 'admin' %}
+                <td class="text-center">
+                  {% if req.STATUS == 'Pending' %}
+                  <a href="{{ url_for('accept', id=req.CONTACT_ID) }}" class="btn btn-sm btn-success mx-1"><i class="fas fa-check"></i></a>
+                  <a href="{{ url_for('decline', id=req.CONTACT_ID) }}" class="btn btn-sm btn-danger mx-1"><i class="fas fa-times"></i></a>
+                  {% else %}
+                  <span class="text-muted"><i class="fas fa-minus"></i></span>
+                  {% endif %}
+                </td>
+                {% endif %}
+              </tr>
+              {% else %}
+              <tr>
+                <td colspan="6" class="text-center text-muted">No blood requests found.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

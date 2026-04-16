@@ -1,0 +1,194 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- Appointments Hero Section -->
+<div class="hero-section text-center">
+    <div class="container hero-content">
+        <h1 class="hero-title">Book an Appointment</h1>
+        <p class="hero-text">Schedule your blood donation at your convenience</p>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <div class="row">
+        <!-- Booking Form -->
+        <div class="col-lg-8 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="fas fa-calendar-plus mr-2"></i>Schedule Your Donation</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/appointments">
+
+                        <!-- Personal Information -->
+                        <h5 class="mb-3">Personal Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name">Full Name *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email">Email *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="blood_type">Blood Type</label>
+                                <select class="form-control" id="blood_type" name="blood_type">
+                                    <option value="">Select if known</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <!-- Appointment Details -->
+                        <h5 class="mb-3">Appointment Details</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="date">Preferred Date *</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="time">Preferred Time *</label>
+                                <select class="form-control" id="time" name="time" required>
+                                    <option value="">Select time slot</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="location">Donation Center *</label>
+                            <select class="form-control" id="location" name="location" required>
+                                <option value="">Select location</option>
+                                <option value="main">Main Blood Bank Center</option>
+                                <option value="downtown">Downtown Collection Center</option>
+                                <option value="north">North District Center</option>
+                                <option value="east">East Side Center</option>
+                                <option value="west">West Valley Center</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="donation_type">Donation Type *</label>
+                            <select class="form-control" id="donation_type" name="donation_type" required>
+                                <option value="">Select donation type</option>
+                                <option value="whole">Whole Blood</option>
+                                <option value="plasma">Plasma</option>
+                                <option value="platelets">Platelets</option>
+                                <option value="double_red">Double Red Cells</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="notes">Additional Notes (Optional)</label>
+                            <textarea class="form-control" id="notes" name="notes" rows="3"
+                                placeholder="Any special requirements or questions..."></textarea>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="terms" required>
+                            <label class="custom-control-label" for="terms">
+                                I confirm that I meet the <a href="/faq">eligibility criteria</a> for blood donation
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-calendar-check mr-2"></i>Book Appointment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Info -->
+        <div class="col-lg-4">
+
+            <!-- Available Slots -->
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-clock mr-2"></i>Today's Availability</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Morning Slots</span>
+                            <span class="badge badge-success">12 Available</span>
+                        </div>
+                        <small class="text-muted">9:00 AM - 12:00 PM</small>
+                    </div>
+                    <div class="mb-0">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Afternoon Slots</span>
+                            <span class="badge badge-warning">5 Available</span>
+                        </div>
+                        <small class="text-muted">2:00 PM - 5:00 PM</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Tips -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-lightbulb mr-2"></i>Before You Come</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="fas fa-check text-success mr-2"></i>Eat a healthy meal</li>
+                        <li class="mb-2"><i class="fas fa-check text-success mr-2"></i>Drink plenty of water</li>
+                        <li class="mb-2"><i class="fas fa-check text-success mr-2"></i>Get good sleep</li>
+                        <li class="mb-2"><i class="fas fa-check text-success mr-2"></i>Bring valid ID</li>
+                        <li class="mb-0"><i class="fas fa-check text-success mr-2"></i>Wear comfortable clothes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h5 class="mb-3"><i class="fas fa-phone mr-2"></i>Need Help?</h5>
+                    <p class="mb-2"><strong>Call us:</strong></p>
+                    <p class="text-muted mb-3">1-800-BLOOD-NOW</p>
+                    <p class="mb-2"><strong>Email:</strong></p>
+                    <p class="text-muted mb-0">appointments@bloodbank.org</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Walk-in Info -->
+    <div class="card bg-info text-white mt-4">
+        <div class="card-body text-center">
+            <h4 class="mb-2"><i class="fas fa-walking mr-2"></i>Walk-ins Welcome!</h4>
+            <p class="mb-0">No appointment? No problem! We accept walk-in donors during all operating hours.</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

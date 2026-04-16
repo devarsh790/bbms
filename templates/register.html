@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="row justify-content-center align-items-center" style="min-height: 85vh;">
+  <div class="col-md-8 col-lg-6 mx-auto">
+    <div class="card shadow-lg border-0 my-5">
+      <div class="card-body p-5">
+        <div class="text-center mb-4">
+          <i class="fas fa-heartbeat fa-3x text-primary mb-3"></i>
+          <h2 class="font-weight-bold">Join the Community</h2>
+          <p class="text-muted">Register to become a donor and save lives</p>
+        </div>
+
+        {% from 'includes/_formhelpers.html' import render_field %}
+        <form action="" method="POST">
+          <div class="form-group">
+            {{render_field(form.name, class_="form-control form-control-lg", placeholder="Full Name")}}
+          </div>
+          <div class="form-group">
+            {{render_field(form.email, class_="form-control form-control-lg", placeholder="Email Address")}}
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              {{render_field(form.password, class_="form-control form-control-lg", placeholder="Password")}}
+            </div>
+            <div class="form-group col-md-6">
+              {{render_field(form.confirm, class_="form-control form-control-lg", placeholder="Confirm Password")}}
+            </div>
+          </div>
+          <!-- Note: The original form seems to miss a username field in the view_file output but had it in my implementation plan. 
+               The view_file output shows name, email, password, confirm. 
+               I'll stick to what was in the view_file to avoid errors, but styling it up. -->
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Register</button>
+        </form>
+
+        <div class="text-center mt-4">
+          <p class="text-muted">Already have an account? <a href="/login" class="font-weight-bold">Login here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

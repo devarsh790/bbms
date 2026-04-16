@@ -1,0 +1,271 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- Compatibility Hero Section -->
+<div class="hero-section text-center">
+    <div class="container hero-content">
+        <h1 class="hero-title">Blood Compatibility Chart</h1>
+        <p class="hero-text">Understanding blood types and donation compatibility</p>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <!-- Interactive Chart -->
+    <div class="card mb-5">
+        <div class="card-header">
+            <h3 class="mb-0"><i class="fas fa-exchange-alt mr-2"></i>Who Can Donate to Whom?</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Donor Blood Type</th>
+                            <th>Can Donate To</th>
+                            <th>Can Receive From</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-weight-bold text-danger">O-</td>
+                            <td>O-, O+, A-, A+, B-, B+, AB-, AB+ <span class="badge badge-warning ml-2">Universal
+                                    Donor</span></td>
+                            <td>O-</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold text-danger">O+</td>
+                            <td>O+, A+, B+, AB+</td>
+                            <td>O-, O+</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold text-danger">A-</td>
+                            <td>A-, A+, AB-, AB+</td>
+                            <td>O-, A-</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold text-danger">A+</td>
+                            <td>A+, AB+</td>
+                            <td>O-, O+, A-, A+</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold text-danger">B-</td>
+                            <td>B-, B+, AB-, AB+</td>
+                            <td>O-, B-</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold text-danger">B+</td>
+                            <td>B+, AB+</td>
+                            <td>O-, O+, B-, B+</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold text-danger">AB-</td>
+                            <td>AB-, AB+</td>
+                            <td>O-, A-, B-, AB-</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold text-danger">AB+</td>
+                            <td>AB+ <span class="badge badge-success ml-2">Universal Recipient</span></td>
+                            <td>O-, O+, A-, A+, B-, B+, AB-, AB+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blood Type Distribution -->
+    <div class="row mb-5">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="fas fa-chart-pie mr-2"></i>Blood Type Distribution</h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted mb-3">Percentage of population by blood type:</p>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>O+ (Positive)</span>
+                            <strong>37%</strong>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 37%">37%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>A+ (Positive)</span>
+                            <strong>36%</strong>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 36%">36%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>B+ (Positive)</span>
+                            <strong>8%</strong>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 8%">8%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>AB+ (Positive)</span>
+                            <strong>3%</strong>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 3%">3%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>O- (Negative)</span>
+                            <strong>7%</strong>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 7%">7%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>A- (Negative)</span>
+                            <strong>6%</strong>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 6%">6%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>B- (Negative)</span>
+                            <strong>2%</strong>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 2%">2%</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>AB- (Negative)</span>
+                            <strong>1%</strong>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar" style="width: 1%; background-color: #6c757d;">1%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="fas fa-info-circle mr-2"></i>Key Facts</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="text-primary"><i class="fas fa-star mr-2"></i>Universal Donor</h5>
+                        <p class="text-muted mb-0"><strong>O-</strong> blood type can be given to anyone, making it
+                            extremely valuable in emergencies when there's no time to determine the patient's blood
+                            type.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-success"><i class="fas fa-star mr-2"></i>Universal Recipient</h5>
+                        <p class="text-muted mb-0"><strong>AB+</strong> blood type can receive from any blood type, but
+                            can only donate to other AB+ individuals.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-danger"><i class="fas fa-tint mr-2"></i>Rh Factor</h5>
+                        <p class="text-muted mb-0">The + or - indicates the Rh factor. Rh- blood can be given to both
+                            Rh+ and Rh- patients, but Rh+ can only be given to Rh+ patients.</p>
+                    </div>
+                    <div>
+                        <h5 class="text-info"><i class="fas fa-dna mr-2"></i>Inheritance</h5>
+                        <p class="text-muted mb-0">Blood type is inherited from parents. Each parent contributes one of
+                            two ABO genes to their child.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Special Blood Types -->
+    <div class="row mb-4">
+        <div class="col-md-4 mb-3">
+            <div class="card border-warning h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                    <h5>Rare Blood Types</h5>
+                    <p class="text-muted mb-0">AB- is the rarest blood type, found in only 1% of the population. Donors
+                        with rare types are especially valuable!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card border-danger h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-heartbeat fa-3x text-danger mb-3"></i>
+                    <h5>High Demand</h5>
+                    <p class="text-muted mb-0">O- blood is always in high demand because it can be used for any patient
+                        in emergency situations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card border-success h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-users fa-3x text-success mb-3"></i>
+                    <h5>Most Common</h5>
+                    <p class="text-muted mb-0">O+ is the most common blood type, but high demand means we still need
+                        regular donations!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Educational Content -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4 class="mb-0"><i class="fas fa-book mr-2"></i>Understanding Blood Components</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-circle text-danger mr-2"></i>Red Blood Cells</h5>
+                    <p class="text-muted mb-0">Carry oxygen throughout the body. Used for trauma patients, surgery, and
+                        anemia treatment.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-circle text-warning mr-2"></i>Plasma</h5>
+                    <p class="text-muted mb-0">The liquid portion of blood. Used for burn victims, trauma patients, and
+                        clotting disorders.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-circle text-info mr-2"></i>Platelets</h5>
+                    <p class="text-muted mb-0">Help blood clot. Critical for cancer patients, transplant recipients, and
+                        trauma victims.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="card bg-primary text-white">
+        <div class="card-body text-center py-5">
+            <h3 class="mb-3">Every Blood Type Matters</h3>
+            <p class="mb-4">No matter your blood type, your donation can save lives</p>
+            {% if session.logged_in %}
+            <a href="/donate" class="btn btn-light btn-lg">Donate Now</a>
+            {% else %}
+            <a href="/register" class="btn btn-light btn-lg mr-2">Register</a>
+            <a href="/login" class="btn btn-outline-light btn-lg">Login</a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

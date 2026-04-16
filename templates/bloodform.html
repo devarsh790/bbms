@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow-lg border-0 my-4">
+      <div class="card-header bg-white">
+        <h4 class="mb-0 text-success"><i class="fas fa-prescription-bottle-alt mr-2"></i> Record Blood Donation</h4>
+      </div>
+      <div class="card-body p-4">
+        <p class="text-muted mb-4">Enter the details of the blood donation below.</p>
+
+        <form action="" method="POST">
+          <div class="form-group">
+            <label class="font-weight-bold">Donor ID</label>
+            <input type="number" name="d_id" class="form-control" placeholder="Enter Donor ID"
+              value="{{request.form.d_id}}">
+            <small class="form-text text-muted">The unique ID assigned to the donor.</small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="font-weight-bold">Blood Group</label>
+              <select name="blood_group" class="form-control">
+                <option value="" disabled selected>Select Group</option>
+                <option value="A+" {% if request.form.blood_group=='A+' %}selected{% endif %}>A+</option>
+                <option value="A-" {% if request.form.blood_group=='A-' %}selected{% endif %}>A-</option>
+                <option value="B+" {% if request.form.blood_group=='B+' %}selected{% endif %}>B+</option>
+                <option value="B-" {% if request.form.blood_group=='B-' %}selected{% endif %}>B-</option>
+                <option value="AB+" {% if request.form.blood_group=='AB+' %}selected{% endif %}>AB+</option>
+                <option value="AB-" {% if request.form.blood_group=='AB-' %}selected{% endif %}>AB-</option>
+                <option value="O+" {% if request.form.blood_group=='O+' %}selected{% endif %}>O+</option>
+                <option value="O-" {% if request.form.blood_group=='O-' %}selected{% endif %}>O-</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="font-weight-bold">Packets (Units)</label>
+              <input type="number" name="packets" class="form-control" placeholder="1" value="{{request.form.packets}}">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success btn-block mt-3">Add to Inventory</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

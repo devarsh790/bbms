@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-lg border-0 my-5">
+      <div class="card-body p-5">
+        <div class="text-center mb-4">
+          <i class="fas fa-envelope-open-text fa-3x text-primary mb-3"></i>
+          <h2 class="font-weight-bold">Contact Us</h2>
+          <p class="text-muted mb-1">Need blood? Fill out the form below and we will get in touch immediately.</p>
+          <p class="text-primary font-weight-bold">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support.BBMS@gmail.com" target="_blank"><i class="fas fa-envelope mr-1"></i> support.BBMS@gmail.com</a>
+          </p>
+        </div>
+
+        <form method="post">
+          <div class="form-group">
+            <label class="font-weight-bold">Full Name</label>
+            <input type="text" name="fname" class="form-control" placeholder="Enter Full Name"
+              value="{{request.form.fname}}">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="font-weight-bold">Blood Group Needed</label>
+              <select name="bgroup" class="form-control">
+                <option value="" disabled selected>Select</option>
+                <option value="A+" {% if request.form.bgroup=='A+' %}selected{% endif %}>A+</option>
+                <option value="A-" {% if request.form.bgroup=='A-' %}selected{% endif %}>A-</option>
+                <option value="B+" {% if request.form.bgroup=='B+' %}selected{% endif %}>B+</option>
+                <option value="B-" {% if request.form.bgroup=='B-' %}selected{% endif %}>B-</option>
+                <option value="AB+" {% if request.form.bgroup=='AB+' %}selected{% endif %}>AB+</option>
+                <option value="AB-" {% if request.form.bgroup=='AB-' %}selected{% endif %}>AB-</option>
+                <option value="O+" {% if request.form.bgroup=='O+' %}selected{% endif %}>O+</option>
+                <option value="O-" {% if request.form.bgroup=='O-' %}selected{% endif %}>O-</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="font-weight-bold">Units Required</label>
+              <input type="number" name="bpackets" class="form-control" placeholder="Ex: 2"
+                value="{{request.form.bpackets}}">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="font-weight-bold">Delivery/Contact Address</label>
+            <textarea name="adress" class="form-control" rows="3"
+              placeholder="Hospital or Residential Address">{{request.form.adress}}</textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg mt-3">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

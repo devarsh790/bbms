@@ -1,0 +1,250 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- Statistics Hero Section -->
+<div class="hero-section text-center">
+    <div class="container hero-content">
+        <h1 class="hero-title">Blood Bank Statistics</h1>
+        <p class="hero-text">Real-time data and insights</p>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <!-- Current Inventory -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3 class="mb-0"><i class="fas fa-warehouse mr-2"></i>Current Blood Inventory</h3>
+        </div>
+        <div class="card-body">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="p-3 border rounded">
+                        <h2 class="text-danger mb-2">A+</h2>
+                        <h4 class="mb-1">245</h4>
+                        <small class="text-muted">Units Available</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="p-3 border rounded">
+                        <h2 class="text-danger mb-2">A-</h2>
+                        <h4 class="mb-1">89</h4>
+                        <small class="text-muted">Units Available</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="p-3 border rounded">
+                        <h2 class="text-danger mb-2">B+</h2>
+                        <h4 class="mb-1">198</h4>
+                        <small class="text-muted">Units Available</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="p-3 border rounded">
+                        <h2 class="text-danger mb-2">B-</h2>
+                        <h4 class="mb-1">67</h4>
+                        <small class="text-muted">Units Available</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="p-3 border rounded">
+                        <h2 class="text-danger mb-2">O+</h2>
+                        <h4 class="mb-1">312</h4>
+                        <small class="text-muted">Units Available</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="p-3 border rounded">
+                        <h2 class="text-danger mb-2">O-</h2>
+                        <h4 class="mb-1">145</h4>
+                        <small class="text-muted">Units Available</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="p-3 border rounded">
+                        <h2 class="text-danger mb-2">AB+</h2>
+                        <h4 class="mb-1">78</h4>
+                        <small class="text-muted">Units Available</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="p-3 border rounded">
+                        <h2 class="text-danger mb-2">AB-</h2>
+                        <h4 class="mb-1">34</h4>
+                        <small class="text-muted">Units Available</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Monthly Statistics -->
+    <div class="row mb-4">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="fas fa-calendar-alt mr-2"></i>This Month</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Donations Collected</span>
+                            <strong class="text-primary">487</strong>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>New Donors</span>
+                            <strong class="text-success">124</strong>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-0">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Units Distributed</span>
+                            <strong class="text-info">412</strong>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="fas fa-chart-line mr-2"></i>Year to Date</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-6 mb-3">
+                            <h3 class="text-primary mb-1">5,234</h3>
+                            <small class="text-muted">Total Donations</small>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h3 class="text-success mb-1">1,456</h3>
+                            <small class="text-muted">New Donors</small>
+                        </div>
+                        <div class="col-6">
+                            <h3 class="text-info mb-1">4,987</h3>
+                            <small class="text-muted">Units Distributed</small>
+                        </div>
+                        <div class="col-6">
+                            <h3 class="text-warning mb-1">14,961</h3>
+                            <small class="text-muted">Lives Saved</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donor Demographics -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4 class="mb-0"><i class="fas fa-users mr-2"></i>Donor Demographics</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5 class="mb-3">By Age Group</h5>
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between mb-1">
+                            <small>18-25 years</small>
+                            <small>28%</small>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 28%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between mb-1">
+                            <small>26-35 years</small>
+                            <small>35%</small>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between mb-1">
+                            <small>36-50 years</small>
+                            <small>25%</small>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <small>50+ years</small>
+                            <small>12%</small>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 12%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="mb-3">By Gender</h5>
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <div class="p-3 border rounded">
+                                <i class="fas fa-male fa-3x text-primary mb-2"></i>
+                                <h4 class="mb-1">62%</h4>
+                                <small class="text-muted">Male</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 border rounded">
+                                <i class="fas fa-female fa-3x text-danger mb-2"></i>
+                                <h4 class="mb-1">38%</h4>
+                                <small class="text-muted">Female</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impact Metrics -->
+    <div class="card bg-light">
+        <div class="card-body text-center py-4">
+            <h3 class="mb-4">Our Collective Impact</h3>
+            <div class="row">
+                <div class="col-md-3 col-6 mb-3">
+                    <h2 class="text-primary mb-2"><i class="fas fa-heartbeat"></i></h2>
+                    <h3 class="mb-1">75,234</h3>
+                    <p class="text-muted mb-0">Lives Saved</p>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <h2 class="text-primary mb-2"><i class="fas fa-hospital"></i></h2>
+                    <h3 class="mb-1">52</h3>
+                    <p class="text-muted mb-0">Partner Hospitals</p>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <h2 class="text-primary mb-2"><i class="fas fa-map-marker-alt"></i></h2>
+                    <h3 class="mb-1">15</h3>
+                    <p class="text-muted mb-0">Cities Served</p>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <h2 class="text-primary mb-2"><i class="fas fa-award"></i></h2>
+                    <h3 class="mb-1">98%</h3>
+                    <p class="text-muted mb-0">Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

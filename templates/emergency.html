@@ -1,0 +1,213 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- Emergency Hero Section -->
+<div class="hero-section text-center" style="background: linear-gradient(135deg, #e63946 0%, #c92a37 100%);">
+    <div class="container hero-content">
+        <h1 class="hero-title"><i class="fas fa-exclamation-triangle mr-3"></i>Emergency Blood Requests</h1>
+        <p class="hero-text">Urgent requirements - Your donation can save a life today</p>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <!-- Alert Banner -->
+    <div class="alert alert-danger border-left-danger mb-4" role="alert">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-bell fa-2x mr-3"></i>
+            <div>
+                <h5 class="mb-1">Critical Blood Shortage Alert</h5>
+                <p class="mb-0">We are currently experiencing critical shortages in O-, AB+, and B- blood types. Your
+                    immediate donation can help save lives.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Requests -->
+    <div class="row">
+
+        <!-- Request 1 -->
+        <div class="col-md-6 mb-4">
+            <div class="card border-danger h-100">
+                <div class="card-header bg-danger text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="fas fa-exclamation-circle mr-2"></i>URGENT</h5>
+                        <span class="badge badge-light">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="mb-3">Blood Type: <span class="text-danger">O-</span></h4>
+                    <div class="mb-2">
+                        <i class="fas fa-tint text-danger mr-2"></i>
+                        <strong>Required:</strong> 5 units
+                    </div>
+                    <div class="mb-2">
+                        <i class="fas fa-user text-primary mr-2"></i>
+                        <strong>Patient:</strong> Emergency Surgery
+                    </div>
+                    <div class="mb-2">
+                        <i class="fas fa-hospital text-primary mr-2"></i>
+                        <strong>Hospital:</strong> City General Hospital
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                        <strong>Location:</strong> Downtown Medical Center
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge badge-danger p-2">Critical Priority</span>
+                        {% if session.logged_in %}
+                        <a href="/contact" class="btn btn-danger">Respond Now</a>
+                        {% else %}
+                        <a href="/login" class="btn btn-danger">Login to Respond</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Request 2 -->
+        <div class="col-md-6 mb-4">
+            <div class="card border-warning h-100">
+                <div class="card-header bg-warning text-dark">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="fas fa-exclamation-triangle mr-2"></i>HIGH PRIORITY</h5>
+                        <span class="badge badge-light">5 hours ago</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="mb-3">Blood Type: <span class="text-danger">AB+</span></h4>
+                    <div class="mb-2">
+                        <i class="fas fa-tint text-danger mr-2"></i>
+                        <strong>Required:</strong> 3 units
+                    </div>
+                    <div class="mb-2">
+                        <i class="fas fa-user text-primary mr-2"></i>
+                        <strong>Patient:</strong> Cancer Treatment
+                    </div>
+                    <div class="mb-2">
+                        <i class="fas fa-hospital text-primary mr-2"></i>
+                        <strong>Hospital:</strong> Memorial Cancer Center
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                        <strong>Location:</strong> North District
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge badge-warning p-2">High Priority</span>
+                        {% if session.logged_in %}
+                        <a href="/contact" class="btn btn-warning">Respond Now</a>
+                        {% else %}
+                        <a href="/login" class="btn btn-warning">Login to Respond</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Request 3 -->
+        <div class="col-md-6 mb-4">
+            <div class="card border-danger h-100">
+                <div class="card-header bg-danger text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="fas fa-exclamation-circle mr-2"></i>URGENT</h5>
+                        <span class="badge badge-light">8 hours ago</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="mb-3">Blood Type: <span class="text-danger">B-</span></h4>
+                    <div class="mb-2">
+                        <i class="fas fa-tint text-danger mr-2"></i>
+                        <strong>Required:</strong> 4 units
+                    </div>
+                    <div class="mb-2">
+                        <i class="fas fa-user text-primary mr-2"></i>
+                        <strong>Patient:</strong> Accident Victim
+                    </div>
+                    <div class="mb-2">
+                        <i class="fas fa-hospital text-primary mr-2"></i>
+                        <strong>Hospital:</strong> Trauma Center East
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                        <strong>Location:</strong> East Side Medical Complex
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge badge-danger p-2">Critical Priority</span>
+                        {% if session.logged_in %}
+                        <a href="/contact" class="btn btn-danger">Respond Now</a>
+                        {% else %}
+                        <a href="/login" class="btn btn-danger">Login to Respond</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Request 4 -->
+        <div class="col-md-6 mb-4">
+            <div class="card border-info h-100">
+                <div class="card-header bg-info text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="fas fa-info-circle mr-2"></i>MODERATE</h5>
+                        <span class="badge badge-light">1 day ago</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="mb-3">Blood Type: <span class="text-danger">A+</span></h4>
+                    <div class="mb-2">
+                        <i class="fas fa-tint text-danger mr-2"></i>
+                        <strong>Required:</strong> 2 units
+                    </div>
+                    <div class="mb-2">
+                        <i class="fas fa-user text-primary mr-2"></i>
+                        <strong>Patient:</strong> Scheduled Surgery
+                    </div>
+                    <div class="mb-2">
+                        <i class="fas fa-hospital text-primary mr-2"></i>
+                        <strong>Hospital:</strong> West Valley Hospital
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                        <strong>Location:</strong> West District
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge badge-info p-2">Moderate Priority</span>
+                        {% if session.logged_in %}
+                        <a href="/contact" class="btn btn-info">Respond Now</a>
+                        {% else %}
+                        <a href="/login" class="btn btn-info">Login to Respond</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- How to Help -->
+    <div class="card bg-light mt-4">
+        <div class="card-body">
+            <h4 class="mb-3"><i class="fas fa-hands-helping text-primary mr-2"></i>How You Can Help</h4>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-tint text-danger mr-2"></i>Donate Blood</h5>
+                    <p class="text-muted mb-0">Schedule an appointment or walk in to donate blood for these urgent
+                        requests.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-share-alt text-primary mr-2"></i>Share</h5>
+                    <p class="text-muted mb-0">Spread the word on social media to help us find compatible donors
+                        quickly.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-phone text-success mr-2"></i>Contact Us</h5>
+                    <p class="text-muted mb-0">Call our emergency hotline: 1-800-BLOOD-NOW for immediate assistance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- Hero Section -->
+<div class="hero-section text-center">
+  <div class="container hero-content">
+    <h1 class="hero-title">Save a Life, Donate Blood</h1>
+    <p class="hero-text">Your contribution can make a difference. Join our community of donors today.</p>
+    {% if not session.logged_in %}
+    <a href="/register" class="btn btn-primary btn-lg mr-3">Become a Donor</a>
+    <a href="/login" class="btn btn-outline-light btn-lg">Login</a>
+    {% else %}
+    <a href="/donate" class="btn btn-primary btn-lg">Donate Now</a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="container mb-5">
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6">
+      <img src="{{url_for('static',filename='images.jpeg')}}" alt="Donate blood" class="img-fluid rounded shadow-lg">
+    </div>
+    <div class="col-md-6">
+      <h2 class="mb-4">Why Donate Blood?</h2>
+      <p class="lead text-muted">Most people are able to give blood, but only 4% actually do. A single donation can save
+        up to three lives.</p>
+
+      <div class="card mt-4">
+        <div class="card-header bg-white border-0 pb-0">
+          <h5 class="mb-0"><i class="fas fa-check-circle text-success mr-2"></i> Eligibility Requirements</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="fas fa-dot-circle text-primary mr-2"
+                style="font-size: 0.5rem; vertical-align: middle;"></i> Are fit and healthy</li>
+            <li class="mb-2"><i class="fas fa-dot-circle text-primary mr-2"
+                style="font-size: 0.5rem; vertical-align: middle;"></i> Weigh at least 50kg (110 lbs)</li>
+            <li class="mb-2"><i class="fas fa-dot-circle text-primary mr-2"
+                style="font-size: 0.5rem; vertical-align: middle;"></i> Are 17-66 years old</li>
+            <li><i class="fas fa-dot-circle text-primary mr-2" style="font-size: 0.5rem; vertical-align: middle;"></i>
+              Have given blood in the last 2 years (if over 70)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 text-center p-4">
+        <div class="card-body">
+          <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
+          <h4>Register</h4>
+          <p class="text-muted">Create an account to start your journey as a donor. It only takes a few minutes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 text-center p-4">
+        <div class="card-body">
+          <i class="fas fa-search-location fa-3x text-primary mb-3"></i>
+          <h4>Find Requests</h4>
+          <p class="text-muted">Browse urgent blood requests in your area and help those in need immediately.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 text-center p-4">
+        <div class="card-body">
+          <i class="fas fa-heart fa-3x text-primary mb-3"></i>
+          <h4>Save Lives</h4>
+          <p class="text-muted">Your donation makes a real impact. Track your donations and see the difference.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
