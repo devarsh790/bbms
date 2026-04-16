@@ -45,14 +45,14 @@ USE bloodbank;
 
 ## Snapshots
 ### Home Page
-![](snapshots/home.png)
+![](snapshots/home.jpeg)
 ### Contact Us
-![](snapshots/contact.png)
+![](snapshots/contact.jpeg)
 ### Register
-![](snapshots/register.png)
+![](snapshots/register.jpeg)
 ### Login
-![](snapshots/login.png)
+![](snapshots/login.jpeg)
 ### Dashboard
-![](snapshots/dashboard.png)
+![](snapshots/dashboard.jpeg)
 ### Blood Requests
-![](snapshots/requests.png)
+![](snapshots/requests.jpeg)
